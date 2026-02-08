@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="content-area">
+
+    <div class="card mb-4">
+        <div class="card-header">
+            🧪 Kidney Disease Prediction
+        </div>
+
+        <div class="card-body">
+
+            <form action="/predict/kidney" method="POST">
+
+                <div class="row">
+
+                    <!-- Column 1 -->
+                    <div class="col-md-4 mb-3">
+                        <label>Age</label>
+                        <input type="number" name="age" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Blood Pressure</label>
+                        <input type="number" name="bp" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Specific Gravity</label>
+                        <input type="number" step="0.001" name="sg" class="form-control" required>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="col-md-4 mb-3">
+                        <label>Albumin</label>
+                        <input type="number" name="al" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Sugar</label>
+                        <input type="number" name="su" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Blood Glucose Random</label>
+                        <input type="number" name="bgr" class="form-control">
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="col-md-4 mb-3">
+                        <label>Blood Urea</label>
+                        <input type="number" name="bu" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Serum Creatinine</label>
+                        <input type="number" step="0.1" name="sc" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Sodium</label>
+                        <input type="number" name="sod" class="form-control">
+                    </div>
+
+                    <!-- Column 4 -->
+                    <div class="col-md-4 mb-3">
+                        <label>Potassium</label>
+                        <input type="number" step="0.1" name="pot" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Hemoglobin</label>
+                        <input type="number" step="0.1" name="hemo" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Packed Cell Volume</label>
+                        <input type="number" name="pcv" class="form-control">
+                    </div>
+
+                    <!-- Column 5 -->
+                    <div class="col-md-4 mb-3">
+                        <label>WBC Count</label>
+                        <input type="number" name="wc" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>RBC Count</label>
+                        <input type="number" step="0.1" name="rc" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Hypertension</label>
+                        <select name="htn" class="form-control">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <!-- Column 6 -->
+                    <div class="col-md-4 mb-3">
+                        <label>Diabetes Mellitus</label>
+                        <select name="dm" class="form-control">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Coronary Artery Disease</label>
+                        <select name="cad" class="form-control">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Pedal Edema</label>
+                        <select name="pe" class="form-control">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Anemia</label>
+                        <select name="ane" class="form-control">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary btn-lg">
+                        🔍 Predict Kidney Disease
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

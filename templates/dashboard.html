@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Header -->
+    <div class="mb-4">
+        <h2 class="fw-bold">📊 Health Screening Dashboard</h2>
+        <p class="text-muted">
+            Select a disease module to perform risk assessment using machine learning models.
+        </p>
+    </div>
+
+    <!-- Cards Row -->
+    <div class="row g-4">
+
+        <!-- Diabetes Card -->
+        <div class="col-md-4">
+            <div class="card h-100 dashboard-card border-primary">
+                <div class="card-body text-center">
+                    <div class="icon-circle bg-primary mb-3">
+                        🩸
+                    </div>
+                    <h5 class="card-title fw-bold">Diabetes Prediction</h5>
+                    <p class="card-text text-muted">
+                        Analyze glucose-related parameters to predict diabetes risk.
+                    </p>
+                    <a href="/diabetes" class="btn btn-primary w-100">
+                        Start Assessment
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Heart Card -->
+        <div class="col-md-4">
+            <div class="card h-100 dashboard-card border-danger">
+                <div class="card-body text-center">
+                    <div class="icon-circle bg-danger mb-3">
+                        ❤️
+                    </div>
+                    <h5 class="card-title fw-bold">Heart Disease Prediction</h5>
+                    <p class="card-text text-muted">
+                        Evaluate cardiac indicators to assess heart disease risk.
+                    </p>
+                    <a href="/heart" class="btn btn-danger w-100">
+                        Start Assessment
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kidney Card -->
+        <div class="col-md-4">
+            <div class="card h-100 dashboard-card border-success">
+                <div class="card-body text-center">
+                    <div class="icon-circle bg-success mb-3">
+                        🧪
+                    </div>
+                    <h5 class="card-title fw-bold">Kidney Disease Prediction</h5>
+                    <p class="card-text text-muted">
+                        Use renal and laboratory parameters to detect kidney disease risk.
+                    </p>
+                    <a href="/kidney" class="btn btn-success w-100">
+                        Start Assessment
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Info Section -->
+    <div class="alert alert-info mt-5">
+        💡 <strong>Note:</strong> This system supports early detection and preventive care by providing
+        real-time disease risk predictions and health recommendations.
+    </div>
+
+</div>
+
+{% endblock %}

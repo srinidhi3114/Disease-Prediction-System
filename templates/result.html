@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>📊 {{ disease }} Prediction Result</h2>
+
+<div class="card p-4 mt-3">
+
+    <h3 class="{% if prediction == 1 %}risk-high{% else %}risk-low{% endif %}">
+        {% if prediction == 1 %}
+            High Risk Detected
+        {% else %}
+            Normal Condition
+        {% endif %}
+    </h3>
+
+    <p><b>Risk Probability:</b> {{ probability }}%</p>
+
+    <!-- Risk Progress -->
+    <div class="progress mb-4">
+        <div class="progress-bar bg-danger" style="width: {{ probability }}%">
+            {{ probability }}%
+        </div>
+    </div>
+
+    <canvas id="healthChart"></canvas>
+
+    <p class="mt-3">
+        Blue = Normal range &nbsp; | &nbsp; Red = Patient value
+    </p>
+
+    <a href="/dashboard" class="btn btn-outline-primary mt-3">
+        ⬅ Back to Dashboard
+    </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('healthChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Glucose (mg/dL)', 'BMI'],
+        datasets: [
+            {
+                label: 'Normal Range',
+                data: [140, 25],
+                backgroundColor: 'rgba(54, 162, 235, 0.6)'
+            },
+            {
+                label: 'Patient Value',
+                data: [
+                    {{ glucose | default(0) }},
+                    {{ bmi | default(0) }}
+                ],
+                backgroundColor: 'rgba(255, 99, 132, 0.6)'
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Hero Section -->
+    <div class="card p-4 mb-4">
+        <h2>🧠 AI-Based Multiple Disease Prediction System</h2>
+        <p class="text-muted">
+            Predict Diabetes, Heart Disease, and Kidney Disease using advanced
+            Machine Learning (XGBoost) models with real-time results and medical insights.
+        </p>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="card feature-card">
+                <div class="icon text-primary">
+                    <i class="bi bi-droplet-half"></i>
+                </div>
+                <h5>Diabetes Prediction</h5>
+                <p>
+                    Uses glucose, BMI, insulin and other parameters
+                    to assess diabetes risk accurately.
+                </p>
+                <a href="/diabetes" class="btn btn-outline-primary btn-sm">
+                    Predict Diabetes
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card feature-card">
+                <div class="icon text-danger">
+                    <i class="bi bi-heart-pulse"></i>
+                </div>
+                <h5>Heart Disease Prediction</h5>
+                <p>
+                    Analyzes ECG, cholesterol, blood pressure,
+                    and heart rate parameters.
+                </p>
+                <a href="/heart" class="btn btn-outline-danger btn-sm">
+                    Predict Heart Disease
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card feature-card">
+                <div class="icon text-success">
+                    <i class="bi bi-bandaid"></i>
+                </div>
+                <h5>Kidney Disease Prediction</h5>
+                <p>
+                    Evaluates creatinine, urea, hemoglobin,
+                    and other renal indicators.
+                </p>
+                <a href="/kidney" class="btn btn-outline-success btn-sm">
+                    Predict Kidney Disease
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer Quote -->
+    <div class="card mt-4 p-3 text-center">
+        💬 <i>“Early detection saves lives — AI makes it faster and smarter.”</i>
+    </div>
+
+</div>
+
+{% endblock %}
